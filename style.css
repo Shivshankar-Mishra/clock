@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #888;
+}
+div > .clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+div > .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 0px 4px rgb(221, 110, 6), -2px -1px 4px rgb(147, 43, 43);
+}
+div > .hour {
+  background-color: rgba(15, 15, 15, 0.911);
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  color: whitesmoke;
+  font-size: 2.5em;
+  font-weight: 500;
+  text-align: center;
+  padding: 5vw 0vw;
+  z-index: 2;
+}
+div > .minute {
+  background-color: #191919;
+  height: 30vw;
+  width: 30vw;
+  border-radius: 50%;
+  transform: translate(-15vw, -15vw) rotate(90deg);
+  z-index: 1;
+}
+div > .second {
+  background-color: #0d180be4;
+  height: 45vw;
+  width: 45vw;
+  border-radius: 50%;
+  transform: translate(-22vw, -22vw) rotate(90deg);
+}
+.indicator {
+  position: absolute;
+  height: 8vw;
+  width: 15vw;
+  right: 27vw;
+  background-color: transparent !important;
+  border-top: 3px solid white;
+  border-left: 5px solid white;
+  border-bottom: 3px solid white;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 3;
+}
+div > .minute > .digit,
+div > .second > .digit {
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: whitesmoke;
+}
+div > .minute > .digit {
+  transform: rotate(115deg);
+}
+div > .second > .digit {
+  transform: rotate(115deg);
+}
+div > .minute > .d12 {
+  top: 0vw;
+  right: 14vw;
+}
+div > .minute > .d1 {
+  top: 2vw;
+  right: 8vw;
+}
+div > .minute > .d2 {
+  top: 6vw;
+  right: 3vw;
+}
+div > .minute > .d3 {
+  top: 13vw;
+  right: 1vw;
+}
+div > .minute > .d4 {
+  bottom: 6vw;
+  right: 3vw;
+}
+div > .minute > .d5 {
+  bottom: 2vw;
+  right: 8vw;
+}
+div > .minute > .d6 {
+  bottom: 0vw;
+  left: 14vw;
+}
+div > .minute > .d7 {
+  bottom: 2vw;
+  left: 8vw;
+}
+div > .minute > .d8 {
+  bottom: 6vw;
+  left: 3vw;
+}
+div > .minute > .d9 {
+  top: 13vw;
+  left: 1vw;
+}
+div > .minute > .d10 {
+  top: 6vw;
+  left: 3vw;
+}
+div > .minute > .d11 {
+  top: 2vw;
+  left: 8vw;
+}
+div > .second > .d60 {
+  top: 0vw;
+  left: 20vw;
+}
+div > .second > .d5 {
+  top: 2vw;
+  right: 14vw;
+}
+div > .second > .d10 {
+  top: 10vw;
+  right: 5vw;
+}
+div > .second > .d15 {
+  top: 20vw;
+  right: 1vw;
+}
+div > .second > .d20 {
+  bottom: 10vw;
+  right: 5vw;
+}
+div > .second > .d25 {
+  bottom: 3vw;
+  right: 12vw;
+}
+div > .second > .d30 {
+  bottom: 0vw;
+  left: 22vw;
+}
+div > .second > .d35 {
+  bottom: 3vw;
+  left: 12vw;
+}
+div > .second > .d40 {
+  bottom: 10vw;
+  left: 5vw;
+}
+div > .second > .d45 {
+  top: 21vw;
+  left: 1vw;
+}
+div > .second > .d50 {
+  top: 10vw;
+  left: 4vw;
+}
+div > .second > .d55 {
+  top: 3vw;
+  left: 11vw;
+}
+div > .flash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  position: absolute;
+  top: 47%;
+  left: 15vw;
+  height: 7vh;
+  width: 70vw;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #14370ee4,
+    #191919,
+    #14370ee4,
+    transparent
+  );
+  background-clip: border-box;
+  border-radius: 50px;
+}
+div.flash-left,
+div.flash-right {
+  font-size: 2em;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: rgb(180, 229, 19);
+}
+div.day {
+  font-size: 1.4rem;
+}
+
+/* Media Query css */
+@media screen and (min-width: 380px) and (max-width: 720px) {
+  div > .hour {
+    padding: 2vw 0vw;
+  }
+  div > .minute > .digit,
+  div > .second > .digit {
+    font-size: 1rem;
+  }
+  div > .flash {
+    top: 47%;
+    left: 0px;
+    padding: 5px 5px;
+    padding-right: 15px;
+    width: 99vw;
+  }
+  div.flash-left,
+  div.flash-right {
+    font-size: 1.3em;
+  }
+  div.day {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 379px) {
+  div > .hour {
+    padding: 0vw 0vw;
+  }
+  div > .minute > .digit,
+  div > .second > .digit {
+    font-size: 0.8rem;
+  }
+  div > .flash {
+    top: 47%;
+    left: 0px;
+    padding: 5px 5px;
+    padding-right: 15px;
+    width: 99vw;
+  }
+  div.flash-left,
+  div.flash-right {
+    font-size: 1em;
+  }
+  div.day {
+    font-size: 0.8rem;
+  }
+}
