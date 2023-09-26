@@ -212,6 +212,9 @@ div.day {
 
 /* Media Query css */
 @media screen and (min-width: 368px) and (max-width: 720px) {
+  .indicator {
+    display: none;
+  }
   div > .hour {
     padding: 2vw 0vw;
   }
@@ -235,6 +238,9 @@ div.day {
   }
 }
 @media screen and (max-width: 367px) {
+  .indicator {
+    display: none;
+  }
   div > .hour {
     padding: 0vw 0vw;
   }
