@@ -55,6 +55,7 @@ div > .second {
 }
 .indicator {
   position: absolute;
+  top: 48%;
   height: 8vw;
   width: 15vw;
   right: 27vw;
@@ -183,7 +184,7 @@ div > .flash {
   position: absolute;
   top: 47%;
   left: 15vw;
-  height: 7vh;
+  height: 10vh;
   width: 70vw;
   background-image: linear-gradient(
     to right,
